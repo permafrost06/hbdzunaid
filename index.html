@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What may this be?</title>
+</head>
+
+<body>
+    <audio controls autoplay loop hidden>
+        <source src="felicidade.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="container">
+        <img src="forza ferrari.png" alt="" class="bg-top">
+        <marquee class="main" scrolldelay="60"><big>Feliz Navidad or whatever to you!</big></marquee>
+        <blink>Does it work?</blink>
+        <marquee behavior="alternate" direction="down" width="600px" height="500px">
+            <marquee class="rainbowText" behavior="alternate" scrolldelay="15" truespeed>Jibon ekhono onek baki
+            </marquee>
+        </marquee>
+        <img class="spin" src="jete hobe bohudur.png" alt="" height="200px" width="auto">
+        <br>
+        <img src="pretty cringe dude.png" alt="">
+        <span class="bold">that's pretty cringe dude <br> bashay shunle ki bolbe -_-</span>
+        <br>
+        <img src="uwu.jpg" alt="" height="150px" width="auto">
+        <br>
+        <marquee behavior="alternate" direction="up" scrolldelay="60" width="500px" height="150px"><img
+                src="khelna gari.png" alt="" width="500px">
+        </marquee>
+        <br>
+        <img src="car1.jpg" alt="">
+        <img src="car2.jpg" alt="">
+        I think this is my magnum opus
+        illl give up web dev after this i think
+        <br>
+        anyways happy birthday bro
+        <br>
+    </div>
+</body>
+
+<style>
+    .bg-top {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    body {
+        background: darkblue;
+        font-family: "Comic Sans MS", "Comic Sans", cursive;
+        text-align: center;
+        margin: auto;
+    }
+
+    .container {
+        background-image: url(bg2.gif);
+        background-repeat: repeat;
+        height: 200vh;
+    }
+
+    marquee {
+        font-size: 2rem;
+    }
+
+    blink {
+        -webkit-animation: 2s linear infinite condemned_blink_effect;
+        /* for Safari 4.0 - 8.0 */
+        animation: 2s linear infinite condemned_blink_effect;
+    }
+
+    .main {
+        color: deeppink;
+        letter-spacing: 1.5rem;
+    }
+
+    big {
+        font-size: 5rem;
+    }
+
+    .bold {
+        font-weight: 800;
+        font-size: 2rem;
+        color: darkseagreen;
+    }
+
+    @-webkit-keyframes condemned_blink_effect {
+        0% {
+            visibility: hidden;
+        }
+
+        50% {
+            visibility: hidden;
+        }
+
+        100% {
+            visibility: visible;
+        }
+    }
+
+    @keyframes condemned_blink_effect {
+        0% {
+            visibility: hidden;
+        }
+
+        50% {
+            visibility: hidden;
+        }
+
+        100% {
+            visibility: visible;
+        }
+    }
+
+    .spin {
+        -webkit-animation: spin 2.5s linear infinite;
+        -moz-animation: spin 2.5s linear infinite;
+        animation: spin 2.5s linear infinite;
+    }
+
+    @-moz-keyframes spin {
+        100% {
+            -moz-transform: rotate(360deg);
+        }
+    }
+
+    @-webkit-keyframes spin {
+        100% {
+            -webkit-transform: rotate(360deg);
+        }
+    }
+
+    @keyframes spin {
+        100% {
+            -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+        }
+    }
+</style>
+
+<script>
+    window.addEventListener("load", function () {
+        var elements = document.getElementsByClassName("rainbowText");
+        for (let i = 0; i < elements.length; i++) {
+            generateRainbowText(elements[i]);
+        }
+    });
+
+    function generateRainbowText(element) {
+        var text = element.innerText;
+        element.innerHTML = "";
+        for (let i = 0; i < text.length; i++) {
+            let charElem = document.createElement("span");
+            charElem.style.color = "hsl(" + (360 * i / text.length) + ",80%,50%)";
+            charElem.innerHTML = text[i];
+            element.appendChild(charElem);
+        }
+    }
+</script>
+
+</html>
